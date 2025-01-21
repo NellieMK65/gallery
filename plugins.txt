@@ -1,0 +1,5 @@
+git:4.11.3
+pipeline:2.6
+slack:2.48
+docker:1.1.9
+nodejs:1.5.1
