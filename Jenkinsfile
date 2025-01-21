@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     environment {
-        PRODUCTION = "mongodb+srv://user:pass@cluster0.oaihr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
-        DEVELOPMENT = "mongodb+srv://user:pass@cluster0.oaihr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
-        TEST = "mongodb+srv://user:pass@cluster0.oaihr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+        PRODUCTION = "mongodb+srv://nelsonmuriithi:rFaA6yMQ9A9QXFDF@cluster0.oaihr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+        DEVELOPMENT = "mongodb+srv://nelsonmuriithi:rFaA6yMQ9A9QXFDF@cluster0.oaihr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+        TEST = "mongodb+srv://nelsonmuriithi:rFaA6yMQ9A9QXFDF@cluster0.oaihr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 
         EMAIL_SUBJECT_SUCCESS = "Gallery Project Build: ${env.JOB_NAME}:${env.BUILD_NUMBER} - Success"
         EMAIL_SUBJECT_FAILURE = "Gallery Project Build: ${env.JOB_NAME}:${env.BUILD_NUMBER} - Failed"
@@ -55,7 +55,7 @@ pipeline {
             steps {
                 script {
                     echo 'Deploying Application'
-                    sh 'curl -X POST https://api.render.com/deploys/rnd_9KZG6DR1UmXSLp8Bx6uciCKsOTuu'
+                    sh 'curl -X POST https://api.render.com/deploys/rnd_EF1kVXvExwy9QOU527inPdaA5yXo'
                 }
             }
         }
@@ -66,7 +66,7 @@ pipeline {
             slackSend(
                 channel: '#gallery-project',
                 color: 'good',
-                message: "Build ${currentBuild.fullDisplayName} completed successfully! URL: https://github.com/Binamin-hussein100/Gallery-Docker"
+                message: "Build ${currentBuild.fullDisplayName} completed successfully! URL: https://github.com/NellieMK65/gallery"
             )
             emailext(
                 attachLog: true,
