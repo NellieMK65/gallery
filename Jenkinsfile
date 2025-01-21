@@ -2,10 +2,6 @@ pipeline {
     agent any
 
     environment {
-        PRODUCTION = "mongodb+srv://nelsonmuriithi:rFaA6yMQ9A9QXFDF@cluster0.oaihr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
-        DEVELOPMENT = "mongodb+srv://nelsonmuriithi:rFaA6yMQ9A9QXFDF@cluster0.oaihr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
-        TEST = "mongodb+srv://nelsonmuriithi:rFaA6yMQ9A9QXFDF@cluster0.oaihr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
-
         EMAIL_SUBJECT_SUCCESS = "Gallery Project Build: ${env.JOB_NAME}:${env.BUILD_NUMBER} - Success"
         EMAIL_SUBJECT_FAILURE = "Gallery Project Build: ${env.JOB_NAME}:${env.BUILD_NUMBER} - Failed"
         EMAIL_RECEPIENT = "nelson.muriithi@moringaschool.com"
@@ -42,12 +38,6 @@ pipeline {
         stage('Run Tests') {
             steps {
                 sh 'npm test'
-            }
-        }
-
-        stage('Build') {
-            steps {
-                sh 'npm run build'
             }
         }
 
