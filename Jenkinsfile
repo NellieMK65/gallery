@@ -30,22 +30,22 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 script {
-                    sh 'npm install'
+                    bat 'npm install'
                 }
             }
         }
 
         stage('Run Tests') {
             steps {
-                sh 'npm test'
+                bat 'npm test'
             }
         }
 
         stage('Deploy') {
             steps {
                 script {
-                    echo 'Deploying Application'
-                    sh 'curl -X POST https://api.render.com/deploys/rnd_EF1kVXvExwy9QOU527inPdaA5yXo'
+                    // echo 'Deploying Application'
+                    bat 'curl -X POST https://api.render.com/deploys/rnd_EF1kVXvExwy9QOU527inPdaA5yXo'
                 }
             }
         }
