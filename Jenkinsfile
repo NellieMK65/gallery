@@ -45,7 +45,7 @@ pipeline {
             steps {
                 script {
                     // echo 'Deploying Application'
-                    bat 'curl -X POST https://api.render.com/deploys/rnd_EF1kVXvExwy9QOU527inPdaA5yXo'
+                    bat 'curl -X POST https://api.render.com/deploy/srv-cu8abfij1k6c739sge30?key=iBDdzLy5hU0'
                 }
             }
         }
